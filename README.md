@@ -1,9 +1,10 @@
 # MP.sh
 Music Player - (bourne) shell script cgi html frontend for mpc/mpd cli playlist manager / music player combo
 
-This is a shell script (bourne shell, or .sh type ) designed to be run by a webserver as a cgi; It requires a cgi-capable webserver on the local machine which also has MPD musicplayer and MPC, its command line interface, running.
+ENVIRONMENT / PREREQUISITES
+This is a shell script (bourne shell, or .sh type ) designed to be run by a webserver as a cgi; It requires a cgi-capable webserver on the local machine which also has MPD musicplayer and MPC, its command line interface, running. You will need to have the ID3 tags in your music files populated using Easytag or similar.
 
-PLEASE NOTE: the playlist manager works on the following ID3 tags;  Artist(name), Genre, Song(title), and Type (your own category, in the Album field;  I use a combination of 2-digit Decade, and  1-word description of mood) I use Easytag to insert the tags into my mp3s.
+PLEASE NOTE: the playlist manager works on the following ID3 tags;  Artist(name), Song(title), Genre, and Type (album);  In the latter, I have used the Album field for a 2-part Type attribute;  I use a combination of 2-digit Decade, and  1-word description of mood e.g. party, mellow) I use Easytag to insert the tags into my mp3s. Generally, I most often just use the Artist / Title combination to build up playlists, and even with just those two, it works well.
 
 A sample config for the Lighttpd web server to allow shell script cgi is included.
 
@@ -11,7 +12,7 @@ The script generates a simple html form that when returned to the server passes 
 
 INSTALLATION
 
-1) Make sure that you have MPD and MPC installed and running.
+1) Make sure that you have MPD and MPC installed and running, and your ID3 tags populated.
 
 2) You need a webserver running on the same host that will be your music player;  that webserver must support shell scripts  (cgi). A sample Lighttpd config file is included above, but it is set up for the Tiny Core Linux distro; yours will vary, but 
 but the important part is enabling the webserver to run shell scripts as cgi.
