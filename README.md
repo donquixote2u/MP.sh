@@ -11,7 +11,12 @@ The script generates a simple html form that when returned to the server passes 
 
 INSTALLATION
 
-copy the MP.sh script to the web server's cgi directory. (e.g. in Apache, usually cgi-bin; in Lighttpd, wherever the config file specifies ) - that's it!  If your webserver is properly configured for cgi, calling up MP.sh as a web page should give you an html interface like the screenshot shown. A sample Lighttpd config file is included above.
+1) Make sure that you have MPD and MPC installed and running.
+
+2) You need a webserver running on the same host that will be your music player;  that webserver must support shell scripts  (cgi). A sample Lighttpd config file is included above, but it is set up for the Tiny Core Linux distro; yours will vary, but 
+but the important part is enabling the webserver to run shell scripts as cgi.
+
+3) copy the MP.sh script to the web server's cgi directory. (e.g. in Apache, usually cgi-bin; in Lighttpd, wherever the config file specifies ) - that's all!  If your webserver is properly configured for cgi, calling up MP.sh as a web page should give you an html interface like the screenshot shown. 
 
 OPERATION
  
